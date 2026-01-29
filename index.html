@@ -436,10 +436,19 @@
     navLinks.forEach(btn => {
       btn.addEventListener('click', () => showPage(btn.dataset.page));
     });
+	  const goContactBtn = document.getElementById("goContact");
+if (goContactBtn) {
+  goContactBtn.addEventListener("click", () => {
+    showPage("contact");
+    window.location.hash = "contact"; // optionnel: met #contact dans l'URL
+  });
+}
+
   </script>
 
 </body>
 </html>
+
 
 
 
