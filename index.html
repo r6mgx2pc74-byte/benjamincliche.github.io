@@ -141,6 +141,120 @@
       }
       .nav { flex-direction: row; flex-wrap: wrap; }
     }
+	/* --- Reviews form (style pro) --- */
+.review-wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.panel {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px;
+  background: #ffffff;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.input, .textarea, .select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+}
+
+.input:focus, .textarea:focus, .select:focus {
+  border-color: #111827;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 800;
+  background: #111827;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  opacity: 0.92;
+}
+
+.help {
+  margin: 10px 0 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.star-choices {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.star-choices input {
+  display: none;
+}
+
+.star-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+  background: #fff;
+}
+
+.star-choices input:checked + .star-pill {
+  border-color: #111827;
+  background: #f3f4f6;
+}
+
+@media (max-width: 900px) {
+  .review-wrap { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+  
   </style>
 </head>
 
@@ -180,27 +294,97 @@
 
       <!-- PAGE 2 : Reviews -->
       <section class="page" id="reviews">
-        <h1>Reviews</h1>
-        <form action="https://formspree.io/f/xxxxabcd" method="POST">
-  <label>Nom</label>
-  <input type="text" name="name" required>
+  <h1>Reviews</h1>
 
-  <label>Note (1 à 5)</label>
-  <select name="rating" required>
-    <option value="5">★★★★★ (5)</option>
-    <option value="4">★★★★☆ (4)</option>
-    <option value="3">★★★☆☆ (3)</option>
-    <option value="2">★★☆☆☆ (2)</option>
-    <option value="1">★☆☆☆☆ (1)</option>
-  </select>
+  <div class="review-wrap">
+    <!-- Colonne gauche : Formulaire -->
+    <div class="panel">
+      <h2>Laisser un avis</h2>
 
-  <label>Avis</label>
-  <textarea name="message" required></textarea>
+      <form action="https://formspree.io/f/xojwvzjp" method="POST">
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Nom</label>
+            <input class="input" id="name" type="text" name="name" placeholder="Ex : Marie L." required maxlength="40">
+          </div>
 
-  <button type="submit">Envoyer</button>
-</form>
+          <div class="field">
+            <label>Note</label>
 
-      </section>
+            <!-- Étoiles 1 à 5 (cliquables) -->
+            <div class="star-choices">
+              <label>
+                <input type="radio" name="rating" value="5" required>
+                <span class="star-pill">★★★★★ <span style="color:#6b7280;">(5)</span></span>
+              </label>
+
+              <label>
+                <input type="radio" name="rating" value="4">
+                <span class="star-pill">★★★★☆ <span style="color:#6b7280;">(4)</span></span>
+              </label>
+
+              <label>
+                <input type="radio" name="rating" value="3">
+                <span class="star-pill">★★★☆☆ <span style="color:#6b7280;">(3)</span></span>
+              </label>
+
+              <label>
+                <input type="radio" name="rating" value="2">
+                <span class="star-pill">★★☆☆☆ <span style="color:#6b7280;">(2)</span></span>
+              </label>
+
+              <label>
+                <input type="radio" name="rating" value="1">
+                <span class="star-pill">★☆☆☆☆ <span style="color:#6b7280;">(1)</span></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Commentaire</label>
+          <textarea class="textarea" id="message" name="message" placeholder="Décris ton expérience en quelques phrases..." required maxlength="500"></textarea>
+        </div>
+
+        <!-- Optionnel : tu peux te rajouter un tag -->
+        <input type="hidden" name="source" value="Site - Avis clients">
+
+        <!-- Redirection après envoi -->
+        <input type="hidden" name="_next" value="https://r6mgx2pc74-byte.github.io/benjamincliche.github.io/#reviews">
+
+        <button class="btn-primary" type="submit">Envoyer mon avis</button>
+
+        <p class="help">
+          Merci ! Ton avis sera envoyé. Les avis visibles sur le site peuvent être ajoutés après vérification.
+        </p>
+      </form>
+    </div>
+
+    <!-- Colonne droite : petite section “info / avis” -->
+    <div class="panel">
+      <h2>À quoi servent les avis ?</h2>
+      <p class="help" style="margin-top:0;">
+        Les avis aident les futurs clients à choisir un service fiable. Si tu as aimé mon travail, n'hésite pas à 
+        laisser une note et un petit commentaire 🙂.
+      </p>
+
+      <h2 style="margin-top:16px;">Avis récents</h2>
+      <p class="help" style="margin-top:0;">
+        (Pour l’instant, les avis sont reçus via Formspree. Tu pourras ensuite afficher ici tes meilleurs avis approuvés.)
+      </p>
+
+      <!-- Exemple d'avis affichés manuellement -->
+      <div class="review">
+        <div class="review-top">
+          <div class="review-name">Client satisfait</div>
+          <div>★★★★★</div>
+        </div>
+        <p style="margin:0;">Travail super propre et rapide. Je recommande !</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <!-- PAGE 3 : Services -->
       <section class="page" id="services">
@@ -247,4 +431,5 @@
 
 </body>
 </html>
+
 
