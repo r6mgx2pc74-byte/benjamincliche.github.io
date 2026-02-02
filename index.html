@@ -458,124 +458,23 @@
 </section>
 
 <!-- PAGE 3 :  -->
-      <section class="page" id="avis">
-  <h1>Avis</h1>
-
-  <div class="review-wrap">
-    <!-- Colonne gauche : Formulaire -->
-    <div class="panel">
-      <h2>Laisser un avis</h2>
-
-      <form action="https://formspree.io/f/xojwvzjp" method="POST">
-        <div class="form-row">
-          <div class="field">
-            <label for="name">Nom</label>
-            <input class="input" id="name" type="text" name="name" placeholder="Ex : Marie L." required maxlength="40">
-          </div>
-
-          <div class="field">
-            <label>Note</label>
-
-            <!-- Étoiles 1 à 5 (cliquables) -->
-            <div class="star-choices">
-              <label>
-                <input type="radio" name="rating" value="5" required>
-                <span class="star-pill">★★★★★ <span style="color:#6b7280;">(5)</span></span>
-              </label>
-
-              <label>
-                <input type="radio" name="rating" value="4">
-                <span class="star-pill">★★★★☆ <span style="color:#6b7280;">(4)</span></span>
-              </label>
-
-              <label>
-                <input type="radio" name="rating" value="3">
-                <span class="star-pill">★★★☆☆ <span style="color:#6b7280;">(3)</span></span>
-              </label>
-
-              <label>
-                <input type="radio" name="rating" value="2">
-                <span class="star-pill">★★☆☆☆ <span style="color:#6b7280;">(2)</span></span>
-              </label>
-
-              <label>
-                <input type="radio" name="rating" value="1">
-                <span class="star-pill">★☆☆☆☆ <span style="color:#6b7280;">(1)</span></span>
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="message">Commentaire</label>
-          <textarea class="textarea" id="message" name="message" placeholder="Décris ton expérience en quelques phrases..." required maxlength="500"></textarea>
-        </div>
-
-        <!-- Optionnel : tu peux te rajouter un tag -->
-        <input type="hidden" name="source" value="Site - Avis clients">
-
-        <!-- Redirection après envoi -->
-        <input type="hidden" name="_next" value="https://entretiencliche.github.io/#avis">
-
-        <button class="btn-primary" type="submit">Envoyer mon avis</button>
-
-        <p class="help">
-          Merci ! Ton avis sera envoyé. Les avis visibles sur le site peuvent être ajoutés après vérification.
-        </p>
-      </form>
-    </div>
-
-    <!-- Colonne droite : petite section “info / avis” -->
-    <div class="panel">
-      <h2>À quoi servent les avis ?</h2>
-      <p class="help" style="margin-top:0;">
-        Les avis aident les futurs clients à choisir un service fiable. Si tu as aimé mon travail, n'hésite pas à 
-        laisser une note et un petit commentaire 🙂.
-      </p>
-
-      <h2 style="margin-top:16px;">Avis récents</h2>
-      <p class="help" style="margin-top:0;">
-        
-      </p>
-
-      <!-- Exemple d'avis affichés manuellement -->
-		<div class="review">
-        <div class="review-top">
-          <div class="review-name">Armando</div>
-          <div>★★★★★</div>
-        </div>
-        <p style="margin:0;">Excellent service! Benjamin s’occupe de la coupe de gazon et de l’entretien de notre terrain. Il est fiable, ponctuel, travaillant et toujours prêt à aider. Nous le recommandons sans hésitation.</p>
-      </div>
-    </div>
-  </div>
-		<div class="review">
-        <div class="review-top">
-          <div class="review-name">Shirley.G</div>
-          <div>★★★★★</div>
-        </div>
-        <p style="margin:0;">Nous sommes très satisfaits des services offerts par Benjamin : tonte de la pelouse, bordures, travaux de plates bandes assez exigeants, etc., le travail est bien fait! La communication est facile et agréable, il est ponctuel et nous l' apprécions beaucoup.
-Nous retiendrons de nouveau ses services dès le printemps jusqu'à l'automne!</p>
-      </div>
-    </div>
-  </div>
       <div class="review">
-        <div class="review-top">
-          <div class="review-name">Stéphanie B.H</div>
-          <div>★★★★★</div>
-        </div>
-        <p style="margin:0;">Je vous encourage chaudement à requérir les services de Benjamin. Il est rigoureux et consciencieux - un jeune homme de confiance. On faire appel à ses services depuis plusieurs mois et on est enchantés!</p>
-      </div>
-		
-      <div class="review">
-        <div class="review-top">
-          <div class="review-name">Julia M.</div>
-          <div>★★★★★</div>
-        </div>
-        <p style="margin:0;">Homme à tout faire sérieux et expérimenté, travaillant, respectueux, ponctuel et poli, disponible rapidement pour divers travaux avec un service soigné et fiable.</p>
-      </div>
+  <div class="review-top">
+    <div>
+      <div class="review-name">Armando</div>
+      <div class="review-date">Octobre 2025</div>
     </div>
+    <div>★★★★★</div>
   </div>
-</section>
+
+  <p style="margin:0;">
+    Excellent service! Benjamin s’occupe de la coupe de gazon et de l’entretien de notre terrain. Il est fiable,
+    ponctuel, travaillant et toujours prêt à aider. Nous le recommandons sans hésitation.
+  </p>
+</div>
+
+<hr class="review-sep">
+
 
       <!-- PAGE 4 : Contact -->
       <section class="page" id="contact">
@@ -678,6 +577,7 @@ if (goContactFromServices) {
 
 </body>
 </html>
+
 
 
 
