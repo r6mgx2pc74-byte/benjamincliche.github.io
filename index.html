@@ -19,7 +19,7 @@
       width: 100%;
       height: 240px;
       overflow: hidden;
-      position: sticky;     /* reste en haut si tu scroll */
+      position: sticky;
       top: 0;
       z-index: 10;
       background: #000;
@@ -93,7 +93,7 @@
       padding: 28px;
       border-radius: 16px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-      display: none; /* caché par défaut */
+      display: none;
     }
 
     .page.active {
@@ -110,7 +110,7 @@
       line-height: 1.6;
     }
 
-    /* Cards  */
+    /* Cards avis */
     .review {
       border: 1px solid #e5e7eb;
       border-radius: 14px;
@@ -131,7 +131,19 @@
       font-weight: bold;
     }
 
-    /* Responsive */
+    .review-date {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    .review-sep {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 16px 0;
+    }
+
+    /* Responsive menu */
     @media (max-width: 800px) {
       .layout { flex-direction: column; }
       .sidebar {
@@ -141,235 +153,214 @@
       }
       .nav { flex-direction: row; flex-wrap: wrap; }
     }
-	/* ---  form (style pro) --- */
-.review-wrap {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 16px;
-  margin-top: 14px;
-}
 
-.panel {
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 16px;
-  background: #ffffff;
-}
+    /* --- form (style pro) --- */
+    .review-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
 
-.panel h2 {
-  margin: 0 0 10px;
-  font-size: 1.25rem;
-}
+    .panel {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 16px;
+      background: #ffffff;
+    }
 
-.field {
-  margin-bottom: 12px;
-}
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+    }
 
-.field label {
-  display: block;
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 6px;
-  color: #111827;
-}
+    .field {
+      margin-bottom: 12px;
+    }
 
-.input, .textarea, .select {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px 12px;
-  border-radius: 14px;
-  border: 1px solid #d1d5db;
-  font-size: 1rem;
-  outline: none;
-  background: #fff;
-}
+    .field label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: #111827;
+    }
 
-.input:focus, .textarea:focus, .select:focus {
-  border-color: #111827;
-}
+    .input, .textarea, .select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
+      outline: none;
+      background: #fff;
+    }
 
-.textarea {
-  min-height: 120px;
-  resize: vertical;
-}
+    .input:focus, .textarea:focus, .select:focus {
+      border-color: #111827;
+    }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
+    .textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
 
-.btn-primary {
-  width: 100%;
-  padding: 12px 14px;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 800;
-  background: #111827;
-  color: #fff;
-}
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
 
-.btn-primary:hover {
-  opacity: 0.92;
-}
+    .btn-primary {
+      width: 100%;
+      padding: 12px 14px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 800;
+      background: #111827;
+      color: #fff;
+    }
 
-.help {
-  margin: 10px 0 0;
-  color: #6b7280;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
+    .btn-primary:hover {
+      opacity: 0.92;
+    }
 
-.star-choices {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
+    .help {
+      margin: 10px 0 0;
+      color: #6b7280;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
 
-.star-choices input {
-  display: none;
-}
+    .star-choices {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
 
-.star-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid #d1d5db;
-  cursor: pointer;
-  user-select: none;
-  font-weight: 700;
-  background: #fff;
-}
+    .star-choices input {
+      display: none;
+    }
 
-.star-choices input:checked + .star-pill {
-  border-color: #111827;
-  background: #f3f4f6;
-}
+    .star-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 700;
+      background: #fff;
+    }
 
-@media (max-width: 900px) {
-  .review-wrap { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-}
-	  /* --- Sections "qui remplissent" (services + contact) --- */
-.grid {
-  display: grid;
-  gap: 14px;
-}
+    .star-choices input:checked + .star-pill {
+      border-color: #111827;
+      background: #f3f4f6;
+    }
 
-.grid-2 {
-  grid-template-columns: 1fr 1fr;
-}
+    @media (max-width: 900px) {
+      .review-wrap { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
 
-.grid-3 {
-  grid-template-columns: 1fr 1fr 1fr;
-}
+    /* --- Sections "qui remplissent" (services + contact) --- */
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
 
-.card {
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 16px;
-  background: #fafafa;
-}
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
 
-.card h2 {
-  margin: 0 0 8px;
-  font-size: 1.2rem;
-}
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 16px;
+      background: #fafafa;
+    }
 
-.badge-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
+    .card h2 {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+    }
 
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid #d1d5db;
-  background: #fff;
-  padding: 10px 12px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 0.95rem;
-}
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
 
-.card p {
-  margin: 0;
-  color: #374151;
-  line-height: 1.6;
-}
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #d1d5db;
+      background: #fff;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
 
-.action-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 12px;
-}
+    .card p {
+      margin: 0;
+      color: #374151;
+      line-height: 1.6;
+    }
 
-.btn-secondary {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 14px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 800;
-  background: #fff;
-  border: 1px solid #d1d5db;
-}
+    /* Actions contact centrées */
+    .action-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
 
-.btn-secondary:hover {
-  background: #f3f4f6;
-}
+    .action-row a {
+      min-width: 180px;
+      text-align: center;
+    }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .action-row { grid-template-columns: 1fr; }
-}
+    .btn-secondary {
+      padding: 12px 14px;
+      border-radius: 14px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 800;
+      background: #fff;
+      border: 1px solid #d1d5db;
+      display: inline-block;
+      width: 100%;
+      box-sizing: border-box;
+    }
 
-  .action-row {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 12px;
-  flex-wrap: wrap;
-}
+    .btn-secondary:hover {
+      background: #f3f4f6;
+    }
 
-.action-row a {
-  min-width: 180px;
-  text-align: center;
-}
-	  .review-date {
-  font-size: 13px;
-  color: #6b7280;
-}
-
-.review-sep {
-  border: none;
-  border-top: 1px solid #e5e7eb;
-  margin: 16px 0;
-}
-
-
+    @media (max-width: 900px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Image en haut : reste identique peu importe la page -->
+  <!-- Image en haut -->
   <div class="header-image">
     <img src="point3d-commercial-imaging-ltd-41RtGos7y4g-unsplash.jpg" alt="Image du terrain">
   </div>
 
   <div class="layout">
 
-    <!-- Menu à gauche -->
+    <!-- Menu -->
     <aside class="sidebar">
       <div class="brand">Benjamin Cliche</div>
 
@@ -381,7 +372,7 @@
       </div>
     </aside>
 
-    <!-- Contenu à droite -->
+    <!-- Contenu -->
     <main class="content">
 
       <!-- PAGE 1 : Accueil -->
@@ -390,277 +381,279 @@
         <p>
           Bonjour, je m’appelle Benjamin Cliche.
           Étudiant en aviation, j’offre depuis maintenant plus de deux ans des services d’entretien de cours et d’aide générale.
-
           Fort de mon expérience dans ce domaine ainsi que de quatre ans d’expérience en vente de produits saisonniers, je suis prêt à vous aider, peu importe votre projet.
-
           Référez-vous à la section Services pour découvrir les différents travaux pour lesquels je peux vous assister.
-        N’hésitez pas à me contacter pour faire appel à mes services ou simplement pour obtenir de l’information.
-				
-         
+          N’hésitez pas à me contacter pour faire appel à mes services ou simplement pour obtenir de l’information.
         </p>
-		  <button class="btn-primary" id="goContact">Obtenir une estimation</button>
-<p class="help" style="margin-top:10px;">Spécifier le type de travail, la localisation et tout autre demande particulière</p>
 
+        <button class="btn-primary" id="goContact">Obtenir une estimation</button>
+        <p class="help" style="margin-top:10px;">
+          Spécifie le type de travail, la localisation et toute demande particulière.
+        </p>
       </section>
 
       <!-- PAGE 2 : Services -->
       <section class="page" id="services">
-  <h1>Services</h1>
-  <p class="help" style="margin-top:0;">
-    Voici les services les plus demandés. Écris-moi si tu as un projet spécial — je m’adapte facilement.
-  </p>
+        <h1>Services</h1>
+        <p class="help" style="margin-top:0;">
+          Voici les services les plus demandés. Écris-moi si tu as un projet spécial — je m’adapte facilement.
+        </p>
 
-  <div class="grid grid-3" style="margin-top:14px;">
+        <div class="grid grid-3" style="margin-top:14px;">
 
-    <div class="card">
-      <h2>Entretien extérieur</h2>
-      <p>Tonte, désherbage, entretien de terrain, arrosage, aide saisonnière.</p>
-      <div class="badge-row">
-        <span class="badge">🌱 Désherbage</span>
-        <span class="badge">🌿 Tonte</span>
-        <span class="badge">💧 Arrosage</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Piscine</h2>
-      <p>Entretien de base, nettoyage, suivi simple (selon les besoins).</p>
-      <div class="badge-row">
-        <span class="badge">🏊 Nettoyage</span>
-        <span class="badge">🧪 Entretien</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Aide générale</h2>
-      <p>Petits travaux, assistance, déplacements, projets ponctuels.</p>
-      <div class="badge-row">
-        <span class="badge">🧰 Homme à tout faire</span>
-        <span class="badge">📦 Déménagement</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Mobilier</h2>
-      <p>Assemblage de meubles intérieurs et extérieurs.</p>
-      <div class="badge-row">
-        <span class="badge">🪑 Assemblage</span>
-        <span class="badge">🔧 Ajustements</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Saisons</h2>
-      <p>Déshivernisation / hivernisation (terrain et tâches connexes).</p>
-      <div class="badge-row">
-        <span class="badge">❄️ Hiver</span>
-        <span class="badge">☀️ Été</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>Soumission rapide</h2>
-      <p>Décris le travail + ta localisation, et je te réponds rapidement.</p>
-      <button class="btn-primary" type="button" id="goContactFromServices">Me contacter</button>
-      <p class="help" style="margin:10px 0 0;">Clique pour aller à la page Contact.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- PAGE 3 :  -->
-     <section class="page" id="avis">
-  <h1>Avis</h1>
-
-  <div class="review-wrap">
-    <!-- Colonne gauche : Formulaire -->
-    <div class="panel">
-      <h2>Laisser un avis</h2>
-
-      <form action="https://formspree.io/f/xojwvzjp" method="POST">
-        <div class="form-row">
-          <div class="field">
-            <label for="name">Nom</label>
-            <input class="input" id="name" type="text" name="name" placeholder="Ex : Marie L." required maxlength="40">
-          </div>
-
-          <div class="field">
-            <label>Note</label>
-
-            <!-- Étoiles 1 à 5 (cliquables) -->
-            <div class="star-choices">
-              <label>
-                <input type="radio" name="rating" value="5" required>
-                <span class="star-pill">★★★★★ <span style="color:#6b7280;">(5)</span></span>
-              </label>
-
-              <label>
-                <input type="radio" name="rating" value="4">
-                <span class="star-pill">★★★★☆ <span style="color:#6b7280;">(4)</span></span>
-              </label>
-
-              <label>
-                <input type="radio" name="rating" value="3">
-                <span class="star-pill">★★★☆☆ <span style="color:#6b7280;">(3)</span></span>
-              </label>
-
-              <label>
-                <input type="radio" name="rating" value="2">
-                <span class="star-pill">★★☆☆☆ <span style="color:#6b7280;">(2)</span></span>
-              </label>
-
-              <label>
-                <input type="radio" name="rating" value="1">
-                <span class="star-pill">★☆☆☆☆ <span style="color:#6b7280;">(1)</span></span>
-              </label>
+          <div class="card">
+            <h2>Entretien extérieur</h2>
+            <p>Tonte, désherbage, entretien de terrain, arrosage, aide saisonnière.</p>
+            <div class="badge-row">
+              <span class="badge">🌱 Désherbage</span>
+              <span class="badge">🌿 Tonte</span>
+              <span class="badge">💧 Arrosage</span>
             </div>
           </div>
+
+          <div class="card">
+            <h2>Piscine</h2>
+            <p>Entretien de base, nettoyage, suivi simple (selon les besoins).</p>
+            <div class="badge-row">
+              <span class="badge">🏊 Nettoyage</span>
+              <span class="badge">🧪 Entretien</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Aide générale</h2>
+            <p>Petits travaux, assistance, déplacements, projets ponctuels.</p>
+            <div class="badge-row">
+              <span class="badge">🧰 Homme à tout faire</span>
+              <span class="badge">📦 Déménagement</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Mobilier</h2>
+            <p>Assemblage de meubles intérieurs et extérieurs.</p>
+            <div class="badge-row">
+              <span class="badge">🪑 Assemblage</span>
+              <span class="badge">🔧 Ajustements</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Saisons</h2>
+            <p>Déshivernisation / hivernisation (terrain et tâches connexes).</p>
+            <div class="badge-row">
+              <span class="badge">❄️ Hiver</span>
+              <span class="badge">☀️ Été</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Soumission rapide</h2>
+            <p>Décris le travail + ta localisation, et je te réponds rapidement.</p>
+            <button class="btn-primary" type="button" id="goContactFromServices">Me contacter</button>
+            <p class="help" style="margin:10px 0 0;">Clique pour aller à la page Contact.</p>
+          </div>
+
         </div>
+      </section>
 
-        <div class="field">
-          <label for="message">Commentaire</label>
-          <textarea class="textarea" id="message" name="message" placeholder="Décris ton expérience en quelques phrases..." required maxlength="500"></textarea>
+      <!-- PAGE 3 : Avis -->
+      <section class="page" id="avis">
+        <h1>Avis</h1>
+
+        <div class="review-wrap">
+          <!-- Formulaire -->
+          <div class="panel">
+            <h2>Laisser un avis</h2>
+
+            <form action="https://formspree.io/f/xojwvzjp" method="POST">
+              <div class="form-row">
+                <div class="field">
+                  <label for="name">Nom</label>
+                  <input class="input" id="name" type="text" name="name" placeholder="Ex : Marie L." required maxlength="40">
+                </div>
+
+                <div class="field">
+                  <label>Note</label>
+
+                  <div class="star-choices">
+                    <label>
+                      <input type="radio" name="rating" value="5" required>
+                      <span class="star-pill">★★★★★ <span style="color:#6b7280;">(5)</span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="rating" value="4">
+                      <span class="star-pill">★★★★☆ <span style="color:#6b7280;">(4)</span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="rating" value="3">
+                      <span class="star-pill">★★★☆☆ <span style="color:#6b7280;">(3)</span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="rating" value="2">
+                      <span class="star-pill">★★☆☆☆ <span style="color:#6b7280;">(2)</span></span>
+                    </label>
+                    <label>
+                      <input type="radio" name="rating" value="1">
+                      <span class="star-pill">★☆☆☆☆ <span style="color:#6b7280;">(1)</span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="message">Commentaire</label>
+                <textarea class="textarea" id="message" name="message" placeholder="Décris ton expérience en quelques phrases..." required maxlength="500"></textarea>
+              </div>
+
+              <input type="hidden" name="source" value="Site - Avis clients">
+              <input type="hidden" name="_next" value="https://entretiencliche.github.io/#avis">
+
+              <button class="btn-primary" type="submit">Envoyer mon avis</button>
+
+              <p class="help">
+                Merci ! Ton avis sera envoyé. Les avis visibles sur le site peuvent être ajoutés après vérification.
+              </p>
+            </form>
+          </div>
+
+          <!-- Infos + avis -->
+          <div class="panel">
+            <h2>À quoi servent les avis ?</h2>
+            <p class="help" style="margin-top:0;">
+              Les avis aident les futurs clients à choisir un service fiable. Si tu as aimé mon travail, n'hésite pas à
+              laisser une note et un petit commentaire 🙂.
+            </p>
+
+            <h2 style="margin-top:16px;">Avis récents</h2>
+
+            <!-- Avis affichés manuellement -->
+            <div class="review">
+              <div class="review-top">
+                <div>
+                  <div class="review-name">Armando</div>
+                  <div class="review-date">02/02/2026</div>
+                </div>
+                <div>★★★★★</div>
+              </div>
+              <p style="margin:0;">
+                Excellent service! Benjamin s’occupe de la coupe de gazon et de l’entretien de notre terrain. Il est fiable,
+                ponctuel, travaillant et toujours prêt à aider. Nous le recommandons sans hésitation.
+              </p>
+            </div>
+            <hr class="review-sep">
+
+            <div class="review">
+              <div class="review-top">
+                <div>
+                  <div class="review-name">Shirley.G</div>
+                  <div class="review-date">31/01/2026</div>
+                </div>
+                <div>★★★★★</div>
+              </div>
+              <p style="margin:0;">
+                Nous sommes très satisfaits des services offerts par Benjamin : tonte de la pelouse, bordures, travaux de
+                plates bandes assez exigeants, etc., le travail est bien fait! La communication est facile et agréable, il est
+                ponctuel et nous l'apprécions beaucoup. Nous retiendrons de nouveau ses services dès le printemps jusqu'à
+                l'automne!
+              </p>
+            </div>
+            <hr class="review-sep">
+
+            <div class="review">
+              <div class="review-top">
+                <div>
+                  <div class="review-name">Stéphanie B.H</div>
+                  <div class="review-date">21/05/2025</div>
+                </div>
+                <div>★★★★★</div>
+              </div>
+              <p style="margin:0;">
+                Je vous encourage chaudement à requérir les services de Benjamin. Il est rigoureux et consciencieux - un jeune
+                homme de confiance. On fait appel à ses services depuis plusieurs mois et on est enchantés!
+              </p>
+            </div>
+            <hr class="review-sep">
+
+            <div class="review">
+              <div class="review-top">
+                <div>
+                  <div class="review-name">Julia M.</div>
+                  <div class="review-date">29/01/2026</div>
+                </div>
+                <div>★★★★★</div>
+              </div>
+              <p style="margin:0;">
+                Homme à tout faire sérieux et expérimenté, travaillant, respectueux, ponctuel et poli, disponible rapidement
+                pour divers travaux avec un service soigné et fiable.
+              </p>
+            </div>
+
+          </div>
         </div>
-
-        <!-- Optionnel : tu peux te rajouter un tag -->
-        <input type="hidden" name="source" value="Site - Avis clients">
-
-        <!-- Redirection après envoi -->
-        <input type="hidden" name="_next" value="https://entretiencliche.github.io/#avis">
-
-        <button class="btn-primary" type="submit">Envoyer mon avis</button>
-
-        <p class="help">
-          Merci ! Ton avis sera envoyé. Les avis visibles sur le site peuvent être ajoutés après vérification.
-        </p>
-      </form>
-    </div>
-
-    <!-- Colonne droite : info + avis -->
-    <div class="panel">
-      <h2>À quoi servent les avis ?</h2>
-      <p class="help" style="margin-top:0;">
-        Les avis aident les futurs clients à choisir un service fiable. Si tu as aimé mon travail, n'hésite pas à
-        laisser une note et un petit commentaire 🙂.
-      </p>
-
-      <h2 style="margin-top:16px;">Avis récents</h2>
-      <p class="help" style="margin-top:0;"></p>
-
-      <!-- Avis affichés manuellement -->
-      <div class="review">
-        <div class="review-top">
-          <div class="review-name">Armando</div>
-          <div>★★★★★</div>
-        </div>
-        <p style="margin:0;">
-          Excellent service! Benjamin s’occupe de la coupe de gazon et de l’entretien de notre terrain. Il est fiable,
-          ponctuel, travaillant et toujours prêt à aider. Nous le recommandons sans hésitation.
-        </p>
-      </div>
-
-      <div class="review">
-        <div class="review-top">
-          <div class="review-name">Shirley.G</div>
-          <div>★★★★★</div>
-        </div>
-        <p style="margin:0;">
-          Nous sommes très satisfaits des services offerts par Benjamin : tonte de la pelouse, bordures, travaux de
-          plates bandes assez exigeants, etc., le travail est bien fait! La communication est facile et agréable, il est
-          ponctuel et nous l'apprécions beaucoup. Nous retiendrons de nouveau ses services dès le printemps jusqu'à
-          l'automne!
-        </p>
-      </div>
-
-      <div class="review">
-        <div class="review-top">
-          <div class="review-name">Stéphanie B.H</div>
-          <div>★★★★★</div>
-        </div>
-        <p style="margin:0;">
-          Je vous encourage chaudement à requérir les services de Benjamin. Il est rigoureux et consciencieux - un jeune
-          homme de confiance. On fait appel à ses services depuis plusieurs mois et on est enchantés!
-        </p>
-      </div>
-
-      <div class="review">
-        <div class="review-top">
-          <div class="review-name">Julia M.</div>
-          <div>★★★★★</div>
-        </div>
-        <p style="margin:0;">
-          Homme à tout faire sérieux et expérimenté, travaillant, respectueux, ponctuel et poli, disponible rapidement
-          pour divers travaux avec un service soigné et fiable.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+      </section>
 
       <!-- PAGE 4 : Contact -->
       <section class="page" id="contact">
-  <h1>Contact</h1>
-  <p class="help" style="margin-top:0;">
-    Écris-moi et je te réponds rapidement. Indique idéalement la ville/secteur et le type de travail.
-  </p>
+        <h1>Contact</h1>
+        <p class="help" style="margin-top:0;">
+          Écris-moi et je te réponds rapidement. Indique idéalement la ville/secteur et le type de travail.
+        </p>
 
-  <div class="grid grid-2" style="margin-top:14px;">
+        <div class="grid grid-2" style="margin-top:14px;">
 
-    <!-- Colonne 1 : Coordonnées + actions -->
-    <div class="card" style="background:#ffffff;">
-      <h2>Coordonnées</h2>
-      <p><strong>Téléphone :</strong> +1 438 379 4581</p>
-      <p><strong>Email :</strong> benjcliche13@gmail.com</p>
-      <p><strong>Facebook/Messenger :</strong> Benjamin Cliche</p>
+          <div class="card" style="background:#ffffff;">
+            <h2>Coordonnées</h2>
+            <p><strong>Téléphone :</strong> +1 438 379 4581</p>
+            <p><strong>Email :</strong> benjcliche13@gmail.com</p>
+            <p><strong>Facebook/Messenger :</strong> Benjamin Cliche</p>
 
-      <div class="action-row">
-        <a class="btn-primary" href="tel:+14383794581" style="text-decoration:none; display:inline-block; text-align:center;">
-          Appeler
-        </a>
+            <div class="action-row">
+              <a class="btn-primary" href="tel:+14383794581" style="text-decoration:none; display:inline-block;">
+                Appeler
+              </a>
 
-        <a class="btn-secondary" href="mailto:benjcliche13@gmail.com?subject=Demande%20de%20service&body=Bonjour%20Benjamin,%0A%0AVoici%20le%20travail%20%C3%A0%20faire%20:%0A-%20...%0A%0ALocalisation%20:%20...%0ADisponibilit%C3%A9%20:%20...%0A%0AMerci!"
-           style="text-decoration:none; display:inline-block; text-align:center;">
-          Envoyer un email
-        </a>
-      </div>
+              <a class="btn-secondary"
+                 href="mailto:benjcliche13@gmail.com?subject=Demande%20de%20service&body=Bonjour%20Benjamin,%0A%0AVoici%20le%20travail%20%C3%A0%20faire%20:%0A-%20...%0A%0ALocalisation%20:%20...%0ADisponibilit%C3%A9%20:%20...%0A%0AMerci!"
+                 style="text-decoration:none; display:inline-block;">
+                Envoyer un email
+              </a>
+            </div>
 
-      <p class="help" style="margin-top:12px;">
-        Astuce : une photo du terrain / du projet aide à faire une estimation plus rapide.
-      </p>
-    </div>
+            <p class="help" style="margin-top:12px;">
+              Astuce : une photo du terrain / du projet aide à faire une estimation plus rapide.
+            </p>
+          </div>
 
-    <!-- Colonne 2 : mini-formulaire (même style que tes avis) -->
-    <div class="card" style="background:#ffffff;">
-      <h2>Demande rapide</h2>
+          <div class="card" style="background:#ffffff;">
+            <h2>Demande rapide</h2>
 
-      <form action="https://formspree.io/f/xojwvzjp" method="POST">
-        <div class="field">
-          <label for="contact-name">Nom</label>
-          <input class="input" id="contact-name" type="text" name="name" placeholder="Ex : Alex" required maxlength="40">
+            <form action="https://formspree.io/f/xojwvzjp" method="POST">
+              <div class="field">
+                <label for="contact-name">Nom</label>
+                <input class="input" id="contact-name" type="text" name="name" placeholder="Ex : Alex" required maxlength="40">
+              </div>
+
+              <div class="field">
+                <label for="contact-email">Email</label>
+                <input class="input" id="contact-email" type="email" name="email" placeholder="Ex : alex@email.com" required>
+              </div>
+
+              <div class="field">
+                <label for="contact-msg">Message</label>
+                <textarea class="textarea" id="contact-msg" name="message" placeholder="Ville/secteur + description du travail + quand tu aimerais le faire" required maxlength="700"></textarea>
+              </div>
+
+              <input type="hidden" name="source" value="Site - Contact">
+              <input type="hidden" name="_next" value="https://entretiencliche.github.io/#contact">
+
+              <button class="btn-primary" type="submit">Envoyer</button>
+              <p class="help">Je réponds dès que possible.</p>
+            </form>
+          </div>
+
         </div>
-
-        <div class="field">
-          <label for="contact-email">Email</label>
-          <input class="input" id="contact-email" type="email" name="email" placeholder="Ex : alex@email.com" required>
-        </div>
-
-        <div class="field">
-          <label for="contact-msg">Message</label>
-          <textarea class="textarea" id="contact-msg" name="message" placeholder="Ville/secteur + description du travail + quand tu aimerais le faire" required maxlength="700"></textarea>
-        </div>
-
-        <input type="hidden" name="source" value="Site - Contact">
-        <input type="hidden" name="_next" value="https://entretiencliche.github.io/#contact">
-
-        <button class="btn-primary" type="submit">Envoyer</button>
-        <p class="help">Je réponds dès que possible.</p>
-      </form>
-    </div>
-
-  </div>
-</section>
+      </section>
 
     </main>
   </div>
@@ -670,36 +663,47 @@
     const pages = document.querySelectorAll('.page');
 
     function showPage(pageId) {
-      // Activer la page
       pages.forEach(p => p.classList.toggle('active', p.id === pageId));
-
-      // Activer le bouton
       navLinks.forEach(b => b.classList.toggle('active', b.dataset.page === pageId));
     }
 
     navLinks.forEach(btn => {
-      btn.addEventListener('click', () => showPage(btn.dataset.page));
+      btn.addEventListener('click', () => {
+        showPage(btn.dataset.page);
+        window.location.hash = btn.dataset.page; // met #... dans l'URL
+      });
     });
-	  const goContactBtn = document.getElementById("goContact");
-if (goContactBtn) {
-  goContactBtn.addEventListener("click", () => {
-    showPage("contact");
-    window.location.hash = "contact"; // optionnel: met #contact dans l'URL
-  });
-}
-	  const goContactFromServices = document.getElementById("goContactFromServices");
-if (goContactFromServices) {
-  goContactFromServices.addEventListener("click", () => {
-    showPage("contact");
-    window.location.hash = "contact";
-  });
-}
 
+    const goContactBtn = document.getElementById("goContact");
+    if (goContactBtn) {
+      goContactBtn.addEventListener("click", () => {
+        showPage("contact");
+        window.location.hash = "contact";
+      });
+    }
 
+    const goContactFromServices = document.getElementById("goContactFromServices");
+    if (goContactFromServices) {
+      goContactFromServices.addEventListener("click", () => {
+        showPage("contact");
+        window.location.hash = "contact";
+      });
+    }
+
+    // ✅ Bonus: ouvre la bonne page si on arrive avec un hash (#avis, #contact, etc.)
+    function handleHash() {
+      const hash = (window.location.hash || "").replace("#", "");
+      if (hash) showPage(hash);
+    }
+
+    window.addEventListener("load", handleHash);
+    window.addEventListener("hashchange", handleHash);
   </script>
 
 </body>
 </html>
+
+
 
 
 
