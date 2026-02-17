@@ -659,54 +659,56 @@
   </div>
 
   <script>
-    const navLinks = document.querySelectorAll('.nav-link');
-    const pages = document.querySelectorAll('.page');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const pages = document.querySelectorAll('.page');
 
-    function showPage(pageId) {
-  pages.forEach(p => p.classList.toggle('active', p.id === pageId));
-  navLinks.forEach(b => b.classList.toggle('active', b.dataset.page === pageId));
+  function showPage(pageId) {
+    pages.forEach(p => p.classList.toggle('active', p.id === pageId));
+    navLinks.forEach(b => b.classList.toggle('active', b.dataset.page === pageId));
 
-  // Remonte instantanément en haut
-  window.scrollTo(0, 0);
-}
+    // Remonte instantanément en haut
+    window.scrollTo(0, 0);
+  }
 
+  navLinks.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const page = btn.dataset.page;
+      showPage(page);
 
-
-    navLinks.forEach(btn => {
-      btn.addEventListener('click', () => {
-        showPage(btn.dataset.page);
-        window.location.hash = btn.dataset.page; // met #... dans l'URL
-      });
+      // Change l'URL sans provoquer de scroll automatique
+      history.replaceState(null, "", "#" + page);
     });
+  });
 
-    const goContactBtn = document.getElementById("goContact");
-    if (goContactBtn) {
-      goContactBtn.addEventListener("click", () => {
-        showPage("contact");
-        window.location.hash = "contact";
-      });
-    }
+  const goContactBtn = document.getElementById("goContact");
+  if (goContactBtn) {
+    goContactBtn.addEventListener("click", () => {
+      showPage("contact");
+      history.replaceState(null, "", "#contact");
+    });
+  }
 
-    const goContactFromServices = document.getElementById("goContactFromServices");
-    if (goContactFromServices) {
-      goContactFromServices.addEventListener("click", () => {
-        showPage("contact");
-        window.location.hash = "contact";
-      });
-    }
+  const goContactFromServices = document.getElementById("goContactFromServices");
+  if (goContactFromServices) {
+    goContactFromServices.addEventListener("click", () => {
+      showPage("contact");
+      history.replaceState(null, "", "#contact");
+    });
+  }
 
-    // ✅ Bonus: ouvre la bonne page si on arrive avec un hash (#avis, #contact, etc.)
-    function handleHash() {
-      const hash = (window.location.hash || "").replace("#", "");
-      if (hash) showPage(hash);
-    }
+  // Ouvre la bonne page si on arrive avec un hash (#avis, #contact, etc.)
+  function handleHash() {
+    const hash = (window.location.hash || "").replace("#", "");
+    if (hash) showPage(hash);
+  }
 
-    window.addEventListener("load", handleHash);
-    window.addEventListener("hashchange", handleHash);
-  </script>
+  window.addEventListener("load", handleHash);
+  window.addEventListener("hashchange", handleHash);
+</script>
 
 </body>
 </html>
+
 
 
 
