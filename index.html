@@ -375,6 +375,21 @@
       }
       .nav { flex-direction: row; flex-wrap: wrap; }
     }
+    /* Services: aligner le bas des cartes + bouton collé en bas */
+#services .card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#services .card .tag-row {
+  margin-top: auto; /* pousse les tags en bas si présents */
+}
+
+/* Le bouton "Me contacter" dans la carte Estimation rapide */
+#services .card .btn-primary {
+  margin-top: auto; /* pousse le bouton en bas */
+}
   </style>
 </head>
 
@@ -719,6 +734,7 @@
 
 </body>
 </html>
+
 
 
 
