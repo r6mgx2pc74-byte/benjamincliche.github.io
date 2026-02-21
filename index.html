@@ -376,12 +376,16 @@
       .nav { flex-direction: row; flex-wrap: wrap; }
     }
   /* Centre uniquement le bouton "Me contacter" dans Services */
-#goContactFromServices {
-  display: block;
-  width: 100%; /* enlève le 100% */
-  margin-top: 33%;
-  margin: 12px auto 0;   /* centre horizontalement */
-  padding: 12px 24px;    /* largeur plus élégante */
+/* Carte Estimation rapide centrage vertical */
+#services .estimation-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centre verticalement */
+}
+
+/* Garde le bouton pleine largeur */
+#services .estimation-card .btn-primary {
+  margin-top: 16px;
 }
   </style>
 </head>
@@ -491,7 +495,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card estimation-card">
             <h2>Estimation rapide</h2>
             <p></p>
             <button class="btn-primary" type="button" id="goContactFromServices">Me contacter</button>
@@ -727,6 +731,7 @@
 
 </body>
 </html>
+
 
 
 
