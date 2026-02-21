@@ -375,17 +375,22 @@
       }
       .nav { flex-direction: row; flex-wrap: wrap; }
     }
-  /* Centre uniquement le bouton "Me contacter" dans Services */
-/* Carte Estimation rapide centrage vertical */
+  /* Carte Estimation rapide */
 #services .estimation-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* centre verticalement */
+  min-height: 100%;
 }
 
-/* Garde le bouton pleine largeur */
+/* Texte normal */
+#services .estimation-card p {
+  margin-bottom: 0;
+}
+
+/* Bouton centré verticalement */
 #services .estimation-card .btn-primary {
-  margin-top: 16px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
   </style>
 </head>
@@ -731,6 +736,7 @@
 
 </body>
 </html>
+
 
 
 
