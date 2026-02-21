@@ -348,6 +348,15 @@
     @media (max-width: 900px) {
       .grid-2, .grid-3 { grid-template-columns: 1fr; }
     }
+    /* Fix: boutons Contact (Appeler / Email) bien centrés et pas full-width */
+.action-row a.btn-primary,
+.action-row a.btn-secondary {
+  width: auto;            /* au lieu de 100% */
+  min-width: 180px;
+  display: inline-flex;   /* centre le texte proprement */
+  justify-content: center;
+  align-items: center;
+}
   </style>
 </head>
 
@@ -711,6 +720,7 @@
 
 </body>
 </html>
+
 
 
 
